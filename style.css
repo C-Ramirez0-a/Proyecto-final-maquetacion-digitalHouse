@@ -1,0 +1,298 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Source Code Pro", monospace;
+  list-style: none;
+  text-decoration: none;
+  color: white;
+}
+
+body {
+  background-color: black;
+}
+
+header {
+  position: fixed;
+  right: 0;
+  top: 0;
+  z-index: 100;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15 3%;
+  background-color: transparent;
+}
+
+.logo {
+  font-size: 30px;
+  font-weight: 800;
+}
+
+.navList {
+  display: flex;
+}
+
+.navList a {
+  margin-left: 60px;
+  font-size: 15px;
+  font-weight: 600;
+  border-bottom: 2px solid transparent;
+  transition: all 0.5s ease;
+}
+
+.navList a:hover {
+  border-bottom: 2px solid white;
+
+}
+
+#menuIcon {
+  display: none;
+  color: white;
+  font-size: 35px;
+  z-index: 101;
+  cursor: pointer;
+}
+
+#menuToggle {
+  display: none;
+}
+
+.menuActionAction {
+  display: none;
+}
+
+.hero {
+  height: 100%;
+  width: 100%;
+  min-height: 100vh;
+  background: linear-gradient(245.49deg, #31494e 0%, #385e70 25%, #131313 75%);
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 2rem;
+}
+
+section {
+  padding: 0 8%;
+}
+
+.heroText h5 {
+  font-size: 14px;
+  font-weight: 400;
+  margin-bottom: 25px;
+}
+
+.heroText h1 {
+  font-family: "Noto Sans Mono", monospace;
+  line-height: 1;
+  font-size: 50px;
+  margin: 0 0 30px;
+}
+
+.heroText p {
+
+  line-height: 1.9;
+  font-size: 80%;
+  margin-bottom: 40px;
+}
+
+.heroText h4 {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.heroImg img {
+  width: 400px;
+  border-radius: 360px;
+  margin: 10% 0 0 10%;
+  height: auto;
+  transition: all 5s linear;
+}
+
+.heroImg img:hover {
+  width: 450px;
+  opacity: 0.6;
+
+}
+
+.heroText a {
+  display: inline-block;
+  background-color: #4d4d4d;
+  border: 1px solid transparent;
+  padding: 15px 30px;
+  line-height: 1.4;
+  font-size: 14px;
+  font-weight: 500;
+  border-radius: 30px;
+  text-transform: uppercase;
+  transition: all 0.5s ease;
+}
+
+.heroText a:hover {
+  background-color: transparent;
+  border: solid white 1px;
+  transform: translateX(8px);
+}
+
+.heroText a.videos {
+  background-color: transparent;
+  border: 1px solid white;
+  margin-left: 20px;
+}
+
+.heroText a.videos i {
+  vertical-align: middle;
+  margin-right: 5px;
+}
+
+.icons {
+  padding: 0 3%;
+  transform: translateY(-50%);
+  position: absolute;
+  top: 50vh;
+}
+
+.icons i {
+  display: block;
+  margin: 26px 0;
+  font-size: 24px;
+  transition: all 0.5s ease;
+}
+
+.icons i:hover {
+  color: #4d4d4d;
+  transform: translateY(-5px);
+}
+
+.scrollDown {
+  position: absolute;
+  bottom: 6%;
+  right: 3%;
+}
+
+.scrollDown i {
+  display: block;
+  padding: 12px;
+  background-color: #4d4d4d;
+  font-size: 25px;
+  border-radius: 30px;
+  transition: all 0.5s ease;
+}
+
+.scrollDown i:hover {
+  transform: translatey(-5px);
+}
+
+@media (max-width:992px) {
+  section {
+    padding: 0 3%;
+    transition: 0.2s;
+  }
+
+  .heroText {
+    padding-top: 0;
+  }
+
+  .heroImg {
+    text-align: center;
+  }
+
+  .heroImg img {
+    width: 80%;
+    margin: 10% 0 0 10%;
+  }
+
+  .heroText p {
+    font-size: 70%;
+  }
+
+  .icons {
+    display: none;
+  }
+
+  .scrollDown {
+    display: none;
+  }
+
+  @media (max-width:768px) {
+    .menuActionAction {
+      display: block  ;
+    }
+    #menuIcon {
+      display: block;
+      
+    }
+    .heroText {
+      text-align: center;
+      padding: 100px;
+    }
+
+    .heroImg img {
+      margin: 0;
+    }
+
+    .hero {
+      height: 100%;
+      gap: 1rem;
+      grid-template-columns: 1fr;
+    }
+
+    .navList {
+      position: absolute;
+      top: 100%;
+      right: -100%;
+      width: 200px;
+      height: 180px;
+      background-color: #0d2c44;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 30px 20px;
+      transition: all 0.5s ease-out;
+    }
+    .navList a{
+      display: block;
+      margin: 7px 0;
+    }
+    #menuToggle:checked + label.menuActionAction + ul{
+      right: 0;
+    }
+  }
+}
+
+/* iniciamos la web responsive */
+
+
+/* // <uniquifier>: Use a unique and descriptive class name
+// <weight>: Use a value from 200 to 900
+
+.source-code-pro-<uniquifier> {
+  font-family: "Source Code Pro", monospace;
+  font-optical-sizing: auto;
+  font-weight: <weight>;
+  font-style: normal;
+}
+// <uniquifier>: Use a unique and descriptive class name
+// <weight>: Use a value from 100 to 900
+
+.noto-sans-mono-<uniquifier> {
+  font-family: "Noto Sans Mono", monospace;
+  font-optical-sizing: auto;
+  font-weight: <weight>;
+  font-style: normal;
+  font-variation-settings:
+    "wdth" 100;
+}
+// <uniquifier>: Use a unique and descriptive class name
+// <weight>: Use a value from 100 to 700
+
+.roboto-mono-<uniquifier> {
+  font-family: "Roboto Mono", monospace;
+  font-optical-sizing: auto;
+  font-weight: <weight>;
+  font-style: normal;
+} */
